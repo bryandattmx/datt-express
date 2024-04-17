@@ -1,0 +1,13 @@
+import { Outlet } from 'react-router-dom'
+import { Sidebar } from '@components/SideNav'
+import Styles from './Styles/Main.module.css'
+
+export function MainApp ({ children }) {
+  return (
+    <main className={Styles.container}>
+      <Sidebar />
+      <Outlet />
+      {children}
+    </main>
+  )
+}
