@@ -1,0 +1,59 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 1.25rem;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 0.75rem;
+}
+
+.containerLocation {
+  width: 100%;
+}
+
+.decorativeSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: var(--primaryColorLight);
+}
+
+.circleSmall {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--primaryColor);
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--textColor);
+}
+
+.lines {
+  width: 2px;
+  height: 55%;
+  border: 1px var(--primaryColor) dashed;
+}

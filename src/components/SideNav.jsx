@@ -12,7 +12,7 @@ export function Sidebar () {
   return (
     <nav className={Styles.container}>
       <header className={Styles.header}>
-        <img src='https://dattexpress.com/wp-content/uploads/2023/02/DATTMX-Logistica-Expres-LOGO-2.png' alt='dattExpress' width={150} />
+        <img src='https://dattexpress.com/wp-content/uploads/2023/02/DATTMX-Logistica-Expres-LOGO-2.png' alt='dattExpress' width={140} />
         <ul className={Styles.listNavigations}>
           <li className={`${baseURL}/app/dashboard` !== location.pathname ? Styles.items : Styles.activeItem}>
             <Tooltip content='Inicio' placement='right' color='danger'>

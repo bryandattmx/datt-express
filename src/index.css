@@ -4,6 +4,7 @@
   
 :root {
   --primaryColor: #3AB57B;
+  --primaryColorLight: #D4F4DB;
   --textColor: #545454;
   --backgroundColor: #F7F8FA;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
