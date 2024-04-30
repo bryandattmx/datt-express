@@ -1,0 +1,48 @@
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background-color: white;
+  border-radius: 1rem;
+}
+
+.title {
+  line-height: 20px;
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: var(--primaryColor);
+}
+
+.infoLabel {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--textColor);
+}
+
+.textLabel {
+  font-weight: 400;
+  color: gray;
+}
+
+
+@media (width > 1600px) {
+  .container {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    line-height: normal;
+    font-weight: 600;
+  }
+
+  .infoLabel {
+    font-size: 1rem;
+  }
+}

@@ -5,10 +5,16 @@ import { router } from '@/router/router'
 import { NextUIProvider } from '@nextui-org/react'
 import './index.css'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+function App () {
+  return (
     <NextUIProvider>
       <RouterProvider router={router} />
     </NextUIProvider>
+  )
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
   </React.StrictMode>
 )

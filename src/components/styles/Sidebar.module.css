@@ -8,7 +8,8 @@
   justify-content: space-between;
   padding: 0.875rem;
   background-color: white;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 24px;
+  position: relative;
 }
 
 .header {
@@ -16,7 +17,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2.5rem;
 }
 
 .listNavigations {

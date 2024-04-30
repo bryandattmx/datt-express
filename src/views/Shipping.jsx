@@ -1,15 +1,10 @@
-import { ShippingSection } from '@components/ShippingSection'
-import { ShippingSectionWeight } from '@components/ShippingSectionWeight'
-import Styles from './Shipping.module.css'
+import { Outlet } from 'react-router-dom'
 
-export function NewShipping () {
+export function NewShipping ({ children }) {
   return (
-    <main className={Styles.container}>
-      <section className={Styles.containerGrids}>
-        <ShippingSection tipo='origen' />
-        <ShippingSection tipo='destino' />
-        <ShippingSectionWeight />
-      </section>
-    </main>
+    <>
+      {children}
+      <Outlet />
+    </>
   )
 }

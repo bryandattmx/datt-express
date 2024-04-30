@@ -1,0 +1,85 @@
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.title {
+  font-size: 1.075rem;
+  font-weight: 500;
+  color: var(--textColor);
+}
+
+
+.textLabel {
+  font-weight: 500;
+  color: var(--textColor);
+}
+
+.subtitleLabel {
+  color: gray;
+  font-weight: 400;
+}
+
+.containerButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.textBody {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: var(--textColor);
+}
+
+.textFinalReview {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  color: var(--primaryColor);
+}
+
+.finalMoney {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.divider {
+  width: 100%;
+  border: 1px solid rgb(236, 236, 236);
+}
+
+@media (width > 1600px) {
+
+  .container {
+    gap: 1rem;
+    justify-content: space-between;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .textBody {
+    font-weight: 500;
+    color: rgb(92, 92, 92);
+  }
+
+  .textFinalReview {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .finalMoney {
+    font-size: 1.5rem;
+  }
+}
