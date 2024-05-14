@@ -1,5 +1,6 @@
 import { ShippingSection } from '@components/ShippingSection'
 import { ShippingSectionWeight } from '@components/ShippingSectionWeight'
+import { ShippingCart } from './components/ShippingCart'
 import Styles from '../Shipping.module.css'
 
 export function Locations () {
@@ -14,6 +15,7 @@ export function Locations () {
           </div>
         </header>
         <ShippingSectionWeight />
+        <ShippingCart />
       </section>
     </main>
   )

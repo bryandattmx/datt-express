@@ -11,6 +11,13 @@
   width: 100%;
 }
 
+.containerRowLocation {
+  display: grid;
+  grid-template-columns: 20%  75%;
+  grid-template-rows: 1;
+  column-gap: 1rem;
+}
+
 .decorativeSection {
   display: flex;
   flex-direction: column;
@@ -54,4 +61,21 @@
   width: 2px;
   height: 55%;
   border: 1px var(--primaryColor) dashed;
+}
+
+.iconContainer {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #D1F4E0;
+}
+
+.icon {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--primaryColor);
 }

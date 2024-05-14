@@ -6,6 +6,11 @@ import { Form } from '../views/new-shipping/Form'
 import { Locations } from '../views/new-shipping/Locations'
 import { Review } from '../views/new-shipping/ReviewShipping'
 import { MyShippings } from '../views/my-shippings/MyShippings'
+import { MyQuotes } from '../views/my-quotes/MyQuotes'
+import { Users } from '../views/users/Users'
+import { Clients } from '../views/clients/Clients'
+import { Embalaje } from '../views/embalaje/Embalaje'
+import { Storage } from '../views/embalaje/storage/Storage'
 
 const baseURL = import.meta.env.VITE_BASE_URL
 
@@ -50,7 +55,28 @@ export const router = createBrowserRouter([
       },
       {
         path: 'my-quotes',
-        element: <MyShippings />
+        element: <MyQuotes />
+      },
+      {
+        path: 'users',
+        element: <Users />
+      },
+      {
+        path: 'clients',
+        element: <Clients />
+      },
+      {
+        path: 'embalaje',
+        children: [
+          {
+            path: 'sells',
+            element: <Embalaje />
+          },
+          {
+            path: 'storage',
+            element: <Storage />
+          }
+        ]
       }
     ]
   }

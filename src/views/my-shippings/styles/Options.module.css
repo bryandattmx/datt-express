@@ -1,0 +1,10 @@
+
+.itemDropdown {
+  width: 100%;
+  height: 100%;
+  padding: 0 0.75rem;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  gap: 1rem;
+}

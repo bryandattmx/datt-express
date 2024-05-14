@@ -1,67 +1,141 @@
-import { Input, Table, TableHeader, TableColumn, TableRow, TableBody, TableCell, getKeyValue, Select, Button } from '@nextui-org/react'
+import { useCallback } from 'react'
+import { Input, Table, TableHeader, TableColumn, TableRow, TableBody, TableCell, Button, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, RangeCalendar, Popover, PopoverTrigger, PopoverContent } from '@nextui-org/react'
 import { IoIosSearch } from 'react-icons/io'
 import { FaChevronDown } from 'react-icons/fa'
+import { BiExport } from 'react-icons/bi'
+import { StatusItem } from '../../components/StatusShipment'
+import { CancelMyShipment } from './components/Options'
+import { today, getLocalTimeZone } from '@internationalized/date'
 import Styles from './MyShippings.module.css'
 
-const rows = [
+const packages = [
   {
-    key: '1',
-    name: 'Tony Reichert',
-    role: 'CEO',
-    status: 'Active'
+    id: '1234567890',
+    client: 'Cliente 1',
+    type: 'Caja',
+    status: 'Entregado',
+    weight: '1.2 kg',
+    date: '2024-04-28',
+    service: 'Estándar',
+    price: '$10.99',
+    options: '1234567890'
   },
   {
-    key: '2',
-    name: 'Zoey Lang',
-    role: 'Technical Lead',
-    status: 'Paused'
+    id: '2345678901',
+    client: 'Cliente 2',
+    type: 'Caja',
+    status: 'Tránsito',
+    weight: '5.8 kg',
+    date: '2024-04-30',
+    service: 'Express',
+    price: '$25.99'
   },
   {
-    key: '3',
-    name: 'Jane Fisher',
-    role: 'Senior Developer',
-    status: 'Active'
+    id: '3456789012',
+    client: 'Cliente 3',
+    type: 'Sobre',
+    status: 'Pendiente',
+    weight: '0.5 kg',
+    date: '2024-04-25',
+    service: 'Estándar',
+    price: '$8.99'
   },
   {
-    key: '4',
-    name: 'William Howard',
-    role: 'Community Manager',
-    status: 'Vacation'
+    id: '4567890123',
+    client: 'Cliente 4',
+    type: 'Sobre',
+    status: 'Entregado',
+    weight: '0.2 kg',
+    date: '2024-04-29',
+    service: 'Express',
+    price: '$6.99'
   }
 ]
 
 const columns = [
   {
-    key: 'name',
-    label: 'NAME'
+    key: 'id',
+    label: 'Numero de guia'
   },
   {
-    key: 'role',
-    label: 'ROLE'
+    key: 'client',
+    label: 'Cliente'
+  },
+  {
+    key: 'type',
+    label: 'Tipo de envio'
+  },
+  {
+    key: 'weight',
+    label: 'Peso'
   },
   {
     key: 'status',
-    label: 'STATUS'
+    label: 'Estatus'
+  },
+  {
+    key: 'date',
+    label: 'Fecha'
+  },
+  {
+    key: 'service',
+    label: 'Servicio seleccionado'
+  },
+  {
+    key: 'price',
+    label: 'Precio'
+  },
+  {
+    key: 'options',
+    label: 'options'
   }
 ]
 
 export function MyShippings () {
+  const renderCell = useCallback((shipment, columnKey) => {
+    const cellValue = shipment[columnKey]
+    switch (columnKey) {
+      case 'status':
+        return <StatusItem value={cellValue} />
+      case 'options':
+        return <CancelMyShipment id={cellValue} />
+      default:
+        return cellValue
+    }
+  })
   return (
     <main className={Styles.container}>
       <section className={Styles.cardContent}>
         <header className={Styles.headerContainer}>
           <Input placeholder='Buscar mi pedido' variant='bordered' startContent={<IoIosSearch />} />
-          <Button endContent={<FaChevronDown className='text-small' />} variant='flat'>Status</Button>
-          <Button>Exportar</Button>
+          <Dropdown>
+            <DropdownTrigger>
+              <Button color='danger' endContent={<FaChevronDown className='text-small' />}>Status</Button>
+            </DropdownTrigger>
+            <DropdownMenu selectionMode='single'>
+              <DropdownItem key='pendiente'>Pendiente</DropdownItem>
+              <DropdownItem key='transito'>Transito</DropdownItem>
+              <DropdownItem key='entregado'>Entregado</DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+          <Popover>
+            <PopoverTrigger>
+              <Button color='primary' endContent={<FaChevronDown className='text-small' />}>Hoy</Button>
+            </PopoverTrigger>
+            <PopoverContent>
+              <RangeCalendar defaultValue={{ start: today(getLocalTimeZone()), end: today(getLocalTimeZone()) }} />
+            </PopoverContent>
+          </Popover>
+          <Button color='success' style={{ color: 'white' }}>Exportar <BiExport style={{ fontSize: '1.25rem' }} /></Button>
         </header>
-        <Table aria-label='Example table with dynamic content'>
+        <Table aria-label='Data Table de mis envios' isStriped removeWrapper>
           <TableHeader columns={columns}>
             {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
           </TableHeader>
-          <TableBody items={rows}>
+          <TableBody items={packages}>
             {(item) => (
               <TableRow key={item.key}>
-                {(columnKey) => <TableCell>{getKeyValue(item, columnKey)}</TableCell>}
+                {(columnKey) => <TableCell>{renderCell(item, columnKey)}</TableCell>}
               </TableRow>
             )}
           </TableBody>

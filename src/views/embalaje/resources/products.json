@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "nombre": "Caja de cartón pequeña",
+    "dimensiones": "20x20x20 cm",
+    "capacidad": "5 kg",
+    "imagen": "ruta/imagen_caja_pequena.jpg",
+    "precio": 10.99
+  },
+  {
+    "id": 2,
+    "nombre": "Caja de cartón mediana",
+    "dimensiones": "30x30x30 cm",
+    "capacidad": "10 kg",
+    "imagen": "ruta/imagen_caja_mediana.jpg",
+    "precio": 15.99
+  },
+  {
+    "id": 3,
+    "nombre": "Caja de cartón grande",
+    "dimensiones": "40x40x40 cm",
+    "capacidad": "20 kg",
+    "imagen": "ruta/imagen_caja_grande.jpg",
+    "precio": 20.99
+  },
+  {
+    "id": 4,
+    "nombre": "Cinta adhesiva transparente",
+    "longitud": "50 m",
+    "ancho": "5 cm",
+    "imagen": "ruta/imagen_cinta_adhesiva.jpg",
+    "precio": 5.99
+  },
+  {
+    "id": 5,
+    "nombre": "Relleno de espuma",
+    "tipo": "Espuma de polietileno",
+    "cantidad": "1 m³",
+    "imagen": "ruta/imagen_relleno_espuma.jpg",
+    "precio": 8.99
+  },
+  {
+    "id": 6,
+    "nombre": "Etiquetas de envío",
+    "cantidad": "100 unidades",
+    "imagen": "ruta/imagen_etiquetas_envio.jpg",
+    "precio": 12.99
+  },
+  {
+    "id": 7,
+    "nombre": "Film estirable manual",
+    "longitud": "300 m",
+    "grosor": "23 micras",
+    "imagen": "ruta/imagen_film_estirable_manual.jpg",
+    "precio": 18.99
+  }
+]

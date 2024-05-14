@@ -4,7 +4,7 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/DATTSys-v2-Front/',
+  base: '/datt-express/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

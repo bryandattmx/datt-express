@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "nombre": "Estados Unidos",
+    "bandera_url": "https://flagpedia.net/data/flags/normal/us.png"
+  },
+  {
+    "id": 2,
+    "nombre": "México",
+    "bandera_url": "https://flagpedia.net/data/flags/normal/mx.png"
+  },
+  {
+    "id": 3,
+    "nombre": "Honduras",
+    "bandera_url": "https://flagpedia.net/data/flags/normal/hn.png"
+  },
+  {
+    "id": 4,
+    "nombre": "Guatemala",
+    "bandera_url": "https://flagpedia.net/data/flags/normal/gt.png"
+  },
+  {
+    "id": 5,
+    "nombre": "El Salvador",
+    "bandera_url": "https://flagpedia.net/data/flags/normal/sv.png"
+  }
+]

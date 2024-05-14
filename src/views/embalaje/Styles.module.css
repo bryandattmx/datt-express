@@ -1,0 +1,31 @@
+.container {
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  z-index: 1;
+}
+
+.header {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  background-color: white;
+  z-index: 1;
+  border-bottom: 1px solid lightgray;
+}
+
+.headerContent {
+  width: 50%;
+}
+
+.textHeader {
+  width: 400px;
+}
+
+.containerBody {
+  width: 100%;
+  height: 90%;
+  display: flex;
+}

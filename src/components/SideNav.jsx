@@ -1,13 +1,16 @@
-import { Avatar } from '@nextui-org/react'
+import { Avatar, Accordion, AccordionItem } from '@nextui-org/react'
 import { LuBox, LuTruck, LuWallet2 } from 'react-icons/lu'
-import { TbWeight } from 'react-icons/tb'
-import { RiHome6Line } from 'react-icons/ri'
+import { TbUsers } from 'react-icons/tb'
+import { PiUsersThreeBold } from 'react-icons/pi'
+import { RiHome6Line, RiBuildingLine } from 'react-icons/ri'
 import { HiOutlinePaperClip } from 'react-icons/hi'
 import { Link, useLocation } from 'react-router-dom'
 import Styles from './styles/Sidebar.module.css'
+import { MdOutlineInventory } from 'react-icons/md'
+import { BiBox } from 'react-icons/bi'
 import { useEffect, useState } from 'react'
 
-export function Sidebar () {
+export function SidebarMain () {
   const baseURL = import.meta.env.VITE_BASE_URL
   const location = useLocation()
   const [currentLocation, setCurrentLocation] = useState([])
@@ -46,16 +49,36 @@ export function Sidebar () {
               <span>Mis cotizaciones</span>
             </Link>
           </li>
-          <li className={`${baseURL}/app/my-shipping` !== location.pathname ? Styles.items : Styles.activeItem}>
-            <Link to={`${baseURL}/app/my-shipping`} className={Styles.links}>
-              <LuWallet2 className={Styles.icon} />
-              <span>Prepago</span>
+          <li className={`${baseURL}/app/embalaje` !== location.pathname ? Styles.items : Styles.activeItem}>
+            <Accordion isCompact className='px-0'>
+              <AccordionItem startContent={<BiBox className={Styles.icon} />} title='Embalaje'>
+                <Link to={`${baseURL}/app/embalaje/sells`} className={Styles.links} style={{ padding: '1rem' }}>
+                  <LuWallet2 className={Styles.icon} />
+                  <span>Ventas</span>
+                </Link>
+                <Link to={`${baseURL}/app/embalaje/storage`} className={Styles.links} style={{ padding: '1rem' }}>
+                  <MdOutlineInventory className={Styles.icon} />
+                  <span>Inventario</span>
+                </Link>
+              </AccordionItem>
+            </Accordion>
+          </li>
+          <li className={`${baseURL}/app/clients` !== location.pathname ? Styles.items : Styles.activeItem}>
+            <Link to={`${baseURL}/app/clients`} className={`${baseURL}/app/clients` !== location.pathname ? Styles.links : Styles.linkActive}>
+              <TbUsers className={Styles.icon} />
+              <span>Clientes</span>
             </Link>
           </li>
-          <li className={`${baseURL}/app/my-shipping` !== location.pathname ? Styles.items : Styles.activeItem}>
-            <Link to={`${baseURL}/app/my-shipping`} className={Styles.links}>
-              <TbWeight className={Styles.icon} />
-              <span>Sobrepeso</span>
+          <li className={`${baseURL}/app/users` !== location.pathname ? Styles.items : Styles.activeItem}>
+            <Link to={`${baseURL}/app/users`} className={`${baseURL}/app/users` !== location.pathname ? Styles.links : Styles.linkActive}>
+              <PiUsersThreeBold className={Styles.icon} />
+              <span>Usuarios</span>
+            </Link>
+          </li>
+          <li className={`${baseURL}/app/my` !== location.pathname ? Styles.items : Styles.activeItem}>
+            <Link to={`${baseURL}/app/my`} className={Styles.links}>
+              <RiBuildingLine className={Styles.icon} />
+              <span>Establecimientos</span>
             </Link>
           </li>
         </ul>
