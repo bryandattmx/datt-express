@@ -27,6 +27,10 @@
   --iti-path-globe-2x: url('intl-tel-input/build/img/globe@2x.png');
 }
 
+.text-success-foreground {
+  color: white;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -38,4 +42,60 @@
   button {
     background-color: #f9f9f9;
   }
+}
+
+
+/* Estilos para las barras de desplazamiento en navegadores webkit (Chrome, Safari, Opera) */
+::-webkit-scrollbar {
+  width: 4px; /* Ancho de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color del fondo de la pista de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b6b6b6; /* Color del fondo del "pulgar" de la barra de desplazamiento */
+  border-radius: 5px; /* Borde redondeado para el "pulgar" */
+}
+
+/* Estilos para las barras de desplazamiento en navegadores Firefox */
+/* Nota: Firefox requiere la activación explícita de la personalización de la barra de desplazamiento */
+/* Puedes activarla con el siguiente código: */
+/* overflow: overlay; */
+/* overflow-y: auto; */
+
+/* Barras de desplazamiento vertical en Firefox */
+/* Nota: Estos estilos también pueden afectar a las barras de desplazamiento horizontales */
+/* Ajusta los estilos según sea necesario */
+.scrollbar-firefox {
+  scrollbar-width: thin; /* Ancho de la barra de desplazamiento */
+}
+
+.scrollbar-firefox::-webkit-scrollbar {
+  display: none; /* Oculta la barra de desplazamiento en navegadores webkit */
+}
+
+.scrollbar-firefox {
+  scrollbar-color: #888 #f1f1f1; /* Color del "pulgar" y la pista de la barra de desplazamiento */
+}
+
+/* Estilos para las barras de desplazamiento en navegadores Internet Explorer y Edge */
+/* Nota: Estos estilos pueden no ser compatibles con versiones antiguas de Internet Explorer */
+/* Ajusta los estilos según sea necesario */
+/* Barra de desplazamiento vertical */
+/* Ajusta el color y otros estilos según sea necesario */
+::-ms-scrollbar {
+  width: 10px; /* Ancho de la barra de desplazamiento */
+}
+
+::-ms-scrollbar-thumb {
+  background: #888; /* Color del fondo del "pulgar" de la barra de desplazamiento */
+  border-radius: 5px; /* Borde redondeado para el "pulgar" */
+}
+
+/* Barra de desplazamiento horizontal */
+/* Ajusta el color y otros estilos según sea necesario */
+::-ms-scrollbar-track {
+  background: #f1f1f1; /* Color del fondo de la pista de la barra de desplazamiento */
 }

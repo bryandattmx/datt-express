@@ -1,12 +1,12 @@
 import { Button, Input, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, Table, TableColumn, TableHeader, TableBody, Select, SelectItem, TableRow, TableCell } from '@nextui-org/react'
 import { PresetService } from './PresetService'
-import { FaPlus } from 'react-icons/fa'
 import { BsThreeDotsVertical } from 'react-icons/bs'
+import { MdChevronRight } from 'react-icons/md'
 import Styles from './styles/ModalPresetServices.module.css'
 
 export function ModalPresetServices ({ isActive, setActive }) {
   return (
-    <Modal isOpen={isActive} onOpenChange={setActive} style={{ maxWidth: '1400px' }}>
+    <Modal isOpen={isActive === 'preset'} onOpenChange={setActive} style={{ maxWidth: '1400px' }}>
       <ModalContent>
         <ModalHeader>Agregar servicio</ModalHeader>
         <ModalBody>
@@ -22,7 +22,7 @@ export function ModalPresetServices ({ isActive, setActive }) {
                       <SelectItem>Kg</SelectItem>
                     </Select>
                   </div>
-                  <Input variant='bordered' color='success' label='Valor agregado' type='number' size='sm' />
+                  <Input variant='bordered' color='success' label='Valor declarado' type='number' size='sm' />
                 </div>
                 <div className={Styles.containerInfoCalc}>
                   <p className={Styles.textGrid}>Peso masa <span className={Styles.textGridValue}>5 Kg</span></p>
@@ -71,8 +71,9 @@ export function ModalPresetServices ({ isActive, setActive }) {
           </main>
         </ModalBody>
         <ModalFooter style={{ borderTop: '1px solid #CCCCCC' }}>
-          <Button onPress={() => setActive(!isActive)} color='success' variant='shadow' style={{ color: 'white' }}>
-            <FaPlus />Agregar
+          <Button onPress={() => setActive('product')} color='success' variant='shadow' style={{ color: 'white' }}>
+            Siguiente
+            <MdChevronRight style={{ fontSize: '1.25rem' }} />
           </Button>
         </ModalFooter>
       </ModalContent>

@@ -2,7 +2,7 @@ import { Button } from '@nextui-org/react'
 import Styles from '../styles/Review.module.css'
 import { Link } from 'react-router-dom'
 
-export function ReviewShip () {
+export function ReviewShip ({ setActive }) {
   return (
     <article className={Styles.container}>
       <header>
@@ -21,7 +21,7 @@ export function ReviewShip () {
       <footer className={Styles.containerButtons}>
         <Button size='md'><Link to='../docs'>Editar envio</Link></Button>
         <Button size='md' color='secondary'>Guardar envio</Button>
-        <Button size='md' color='success' style={{ color: 'white' }}>Ir a pagar</Button>
+        <Button size='md' color='success' style={{ color: 'white' }} onPress={() => setActive(true)}>Ir a pagar</Button>
       </footer>
     </article>
   )

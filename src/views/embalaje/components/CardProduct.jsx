@@ -1,4 +1,5 @@
 import Styles from '../styles/Card.module.css'
+
 export function ProductItem ({ product }) {
   console.log(product)
   return (

@@ -106,13 +106,13 @@
 .containerHeader {
   width: 100%;
   display: grid;
-  grid-template-columns: 10% 1% 60%;
+  grid-template-columns: 10% 15% 50% 15%;
   column-gap: 1.5rem;
 }
 
 .containerRow2 {
   width: 70%;
   display: grid;
-  grid-template-columns: repeat(3, 0.5fr);
+  grid-template-columns: 25% 75%;
   column-gap: 1rem;
 }
